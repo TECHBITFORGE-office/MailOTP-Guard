@@ -61,7 +61,7 @@ git --version
 ```
 ### Clone the repo and install dependencies:
 ```bash
-git clone https://github.com/TECHBITFORGE-office/EmailOTP-Auth-Service.git
+git clone https://github.com/TECHBITFORGE-office/MailOTP-Guard.git
 cd EmailOTP-Auth-Service
 pip install flask Flask-Limiter python-dotenv
 ```
@@ -112,3 +112,4 @@ Server runs at http://localhost:5000
 3. Consider putting behind Cloudflare / reverse proxy for extra protection
 
 ### MailOTP Guard makes authentication safe, fast, and professional — all without sacrificing simplicity. 💌
+
