@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your OTP Code</title>
+    <style>
+        /* Global Reset */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        table { border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #f4f7f9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; margin: auto !important; }
+            .content-padding { padding: 20px !important; }
+            .otp-code { font-size: 32px !important; letter-spacing: 8px !important; }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f7f9;">
+    <center>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 40px auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            
+            <tr>
+                <td style="padding: 40px 40px 20px 40px; text-align: center;">
+                    <h1 style="margin: 0; font-size: 24px; color: #1a1a1a; font-weight: 700; letter-spacing: -0.5px;">{{APP_NAME}}</h1>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="content-padding" style="padding: 0 50px 40px 50px; text-align: center;">
+                    <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 24px; color: #4b5563;">
+                        To complete your sign-in, please use the following one-time password (OTP).
+                    </p>
+
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                        <tr>
+                            <td style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px 40px;">
+                                <span class="otp-code" style="font-family: 'Courier New', Courier, monospace; font-size: 42px; font-weight: 800; color: #2563eb; letter-spacing: 12px; display: block; margin-left: 12px;">{{OTP_CODE}}</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="margin: 24px 0 0 0; font-size: 14px; font-weight: 500; color: #64748b;">
+                        This code is valid for <span style="color: #1e293b; font-weight: 600;">5 minutes</span>.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 0 50px 40px 50px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffbeb; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                        <tr>
+                            <td style="padding: 16px; font-size: 13px; line-height: 20px; color: #92400e;">
+                                <strong>Security Alert:</strong> For your protection, never share this code with anyone. Our team will never ask for your OTP over the phone or email.
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 0 50px 40px 50px; text-align: center; border-top: 1px solid #f1f5f9;">
+                    <p style="margin: 20px 0 8px 0; font-size: 12px; color: #94a3b8; line-height: 18px;">
+                        If you did not request this code, you can safely ignore this email. Someone may have entered your email address by mistake.
+                    </p>
+                    <p style="margin: 0; font-size: 12px; color: #cbd5e1;">
+                        &copy; {{YEAR}} {{APP_NAME}}. All rights reserved.
+                    </p>
+                    <p style="margin: 20px 0 0 0; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">
+                        MailOTP Guard &mdash; made with ❤️ by TechBitForge
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
