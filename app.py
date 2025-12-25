@@ -23,43 +23,42 @@ TEMPLATE_PATH = os.getcwd()  + "\\Templates\\template1.html"
 REMOVE_WATERMARK = False
 
 # ================= API KEYS =================
-VALID_API_KEYS = {
-    "sk-apinow-tbfgenrated1": {"user": "demo"},
-    "sk-apinow-tbfgenratedpro": {"user": "pro"}
-}
+# VALID_API_KEYS = {
+# add your custom apikey 
+# }
 
-def verify_api_key(key: str):
-    return VALID_API_KEYS.get(key)
+# def verify_api_key(key: str):
+#     return VALID_API_KEYS.get(key)
 
-# ================= AUTH DECORATOR =================
-def require_api_key(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        auth = request.headers.get("Authorization", "")
+# # ================= AUTH DECORATOR =================
+# def require_api_key(f):
+#     @wraps(f)
+#     def decorated(*args, **kwargs):
+#         auth = request.headers.get("Authorization", "")
 
-        if not auth.startswith("Bearer "):
-            return jsonify({
-                "error": {
-                    "message": "Missing API key",
-                    "type": "authentication_error"
-                }
-            }), 401
+#         if not auth.startswith("Bearer "):
+#             return jsonify({
+#                 "error": {
+#                     "message": "Missing API key",
+#                     "type": "authentication_error"
+#                 }
+#             }), 401
 
-        api_key = auth.replace("Bearer ", "").strip()
-        key_data = verify_api_key(api_key)
+#         api_key = auth.replace("Bearer ", "").strip()
+#         key_data = verify_api_key(api_key)
 
-        if not key_data:
-            return jsonify({
-                "error": {
-                    "message": "Invalid API key",
-                    "type": "authentication_error"
-                }
-            }), 401
+#         if not key_data:
+#             return jsonify({
+#                 "error": {
+#                     "message": "Invalid API key",
+#                     "type": "authentication_error"
+#                 }
+#             }), 401
 
-        request.api_user = key_data["user"]
-        return f(*args, **kwargs)
+#         request.api_user = key_data["user"]
+#         return f(*args, **kwargs)
 
-    return decorated
+#     return decorated
 
 # ================= RATE LIMIT =================
 limiter = Limiter(
@@ -148,7 +147,7 @@ def send_email(email, otp):
 
 # ================= SEND OTP =================
 @app.route("/send-otp", methods=["POST"])
-@require_api_key
+# @require_api_key
 @limiter.limit("5 per minute")
 def send_otp():
     ip = request.remote_addr
@@ -183,7 +182,7 @@ def send_otp():
 
 # ================= RESEND OTP =================
 @app.route("/resend-otp", methods=["POST"])
-@require_api_key
+# @require_api_key
 @limiter.limit("3 per minute")
 def resend_otp():
     ip = request.remote_addr
@@ -231,7 +230,7 @@ def resend_otp():
 
 # ================= VERIFY OTP =================
 @app.route("/verify-otp", methods=["POST"])
-@require_api_key
+# @require_api_key
 @limiter.limit("10 per minute")
 def verify_otp():
     ip = request.remote_addr
@@ -280,3 +279,4 @@ def verify_otp():
 # ================= RUN =================
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
+
