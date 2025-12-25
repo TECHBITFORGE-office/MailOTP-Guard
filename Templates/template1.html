@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your OTP Code</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .container {
+      max-width: 520px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    .header {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      padding: 24px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .content {
+      padding: 30px;
+      color: #333333;
+      line-height: 1.6;
+    }
+    .otp {
+      display: inline-block;
+      font-size: 28px;
+      letter-spacing: 6px;
+      padding: 14px 26px;
+      background: #f1f5f9;
+      border-radius: 8px;
+      color: #111827;
+      font-weight: bold;
+    }
+    .footer {
+      background: #f9fafb;
+      padding: 18px;
+      text-align: center;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .watermark {
+      margin-top: 10px;
+      font-size: 11px;
+      opacity: 0.45;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Verify Your Email</h1>
+    </div>
+
+    <div class="content">
+      <p>Hello 👋,</p>
+      <p>Use the OTP below to complete your verification.</p>
+
+      <div style="text-align:center; margin:25px 0;">
+        <div class="otp">{{OTP_CODE}}</div>
+      </div>
+
+      <p>This code expires in <strong>5 minutes</strong>.</p>
+    </div>
+
+    <div class="footer">
+      © {{YEAR}} {{APP_NAME}}  
+      <div class="watermark">
+        MailOTP Guard — made with ❤️ by TechBitForge
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
